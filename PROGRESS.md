@@ -11,6 +11,8 @@ Senast uppdaterad 2026-11-16 (teknisk spik klar).
   - **Spiken visar redan lärandemål 3 och 4:** för frågan "Hur hög är kommunalskatten i Västervik?" rankas en påhittad sida från 2015 högst (0,73) före beslutet från i år (0,41), och för bibliotekets öppettider rankas den engelska sidan högst. Rankningen följer betydelsen, inte datumet, språket eller sanningen.
   - **Teknik:** worker och klient i `src/sok/`. ONNX Runtimes wasm-filer kopieras till `public/ort/` av `scripts/copy-ort.mjs` (efter `npm install`), så att inget hämtas från jsDelivr. Två fallgropar som är lösta: Node's `fetch` går inte genom byggmiljöns proxy (modellfilerna hämtas med curl till `.cache/hf/`), och Transformers.js hoppar över lokala filer om `env.localModelPath` är en hel adress i stället för en sökväg.
 
+- **Mall för inspelningar** (2026-11-16): `docs/INSPELNING.md` beskriver hur Vidar spelar in en körning. Ifyllda mallar läggs i `inspelningar/`, och `scripts/inspelning_till_json.mjs` gör om dem till `public/data/inspelningar.json` (provkört på ett påhittat exempel, sedan borttaget). Skriptet varnar om meningen vid en hänvisning inte finns ordagrant i svaret.
+
 ## Nästa steg
 
 1. **Vidar svarar på de öppna frågorna** nedan, framför allt exempelfrågorna och hur inspelningen ska göras.
