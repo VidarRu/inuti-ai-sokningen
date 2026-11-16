@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vite/
+# Modellvikter och andra stora filer läggs aldrig i Git
+public/models/
+*.onnx
+*.onnx_data
+*.safetensors
+.cache/
+__pycache__/
+.DS_Store
+.env.local
+.env.*.local
+public/ort/

@@ -1,0 +1,25 @@
+{
+  "name": "inuti-ai-sokningen",
+  "version": "0.1.0",
+  "description": "Inuti AI-sökningen – en scrollsida som följer en fråga genom en AI-söktjänst",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VidarRu/inuti-ai-sokningen.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "node scripts/copy-ort.mjs"
+  },
+  "devDependencies": {
+    "vite": "^8.3.8"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
+    "three": "^0.187.0"
+  }
+}

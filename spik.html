@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teknisk spik – Inuti AI-sökningen</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 52rem; margin: 2rem auto; padding: 0 1rem; background: #04050c; color: #eef1fb; }
+    h1 { font-size: 1.4rem; } code { color: #ffb24a; }
+    #status { padding: 0.5rem 0.8rem; border: 1px solid #334; border-radius: 0.5rem; }
+    form { display: flex; gap: 0.5rem; margin: 1rem 0; }
+    input { flex: 1; font: inherit; padding: 0.5rem 0.7rem; background: #0b0e1e; color: #fff; border: 1px solid #556; border-radius: 0.4rem; }
+    button { font: inherit; padding: 0.5rem 1rem; border-radius: 999px; border: 0; background: #ffb24a; cursor: pointer; }
+    .chips button { background: #1a2040; color: #fff; margin: 0 0.3rem 0.3rem 0; font-size: 0.9rem; }
+    ol { padding-left: 1.5rem; } li { margin: 0.35rem 0; }
+    .bar { display: inline-block; height: 0.5rem; background: linear-gradient(90deg, #6f8cff, #e9eeff); border-radius: 999px; vertical-align: middle; margin-right: 0.5rem; }
+    .score { font-family: ui-monospace, monospace; color: #b9c0d8; } .id { color: #8e96b3; font-size: 0.85rem; }
+    .time { color: #8e96b3; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Teknisk spik: rankning i webbläsaren</h1>
+  <p>Modellen <code id="model"></code> räknar fram en vektor för frågan och för varje textbit. Listan visar likheten (cosinus) i fallande ordning.</p>
+  <p id="status">Startar …</p>
+  <form id="f"><input id="q" type="text" value="När har biblioteket i Västervik öppet?" autocomplete="off"><button type="submit">Ranka</button></form>
+  <div class="chips" id="chips"></div>
+  <p class="time" id="time"></p>
+  <ol id="out"></ol>
+  <script type="module" src="/src/spik.js"></script>
+</body>
+</html>
