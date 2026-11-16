@@ -15,12 +15,14 @@ Senast uppdaterad 2026-11-16 (teknisk spik klar).
 
 ## Nästa steg
 
-1. **Vidar svarar på de öppna frågorna** nedan, framför allt exempelfrågorna och hur inspelningen ska göras.
+1. **Vidar spelar in de tre (fyra) frågorna** enligt `docs/INSPELNING.md`.
 2. **Steg 2, förinspelad data.** Riktiga körningar i en AI-söktjänst för två eller tre frågor, sparade med datum i `public/data/`. Kan inte göras från byggmiljön (den når inte tjänsterna). Samtidigt: byt spikens påhittade textbitar mot riktiga, daterade utdrag, och förberäkna deras vektorer med samma modell i Node (`scripts/`), så att steg 3 fungerar utan modellen.
 3. **Steg 3, partikelskelett och scroll.** Kopiera `stage.js`, `shapes.js`, scrollkoden och `style.css` från hjärnprojektet och byt ut formerna: sökruta som löses upp, frågan som delas, stjärnfält med sökfrågan och träffarna som grannar, kontextfönstret, svaret med trådar.
 4. **Steg 4, koppla in modellen** i stjärnfältet.
 
 ## Beslut
+
+- **Fyra exempelfrågor** (Vidar, 2026-11-16): julöppettider på Västerviks stadsbibliotek, bästa appen för gratis e-böcker, regler för elsparkcyklar, och i reserv månadskort på bussen i Kalmar län. Motiven står i `docs/PLAN.md`. Spikens korpus (`public/data/korpus.json`) har nu dessa fyra frågor och platshållartexter; MiniLM rankar rätt bit först på alla fyra, och fjolårets jultider rankas före årets vanliga tider (0,76 mot 0,68).
 
 - Modell: `Xenova/paraphrase-multilingual-MiniLM-L12-v2` int8 (se ovan). Går att byta i `src/sok/config.js`.
 - WebGPU används inte. Modellen är liten nog för WebAssembly, och det sparar en felkälla.
@@ -28,7 +30,6 @@ Senast uppdaterad 2026-11-16 (teknisk spik klar).
 
 ## Öppna frågor
 
-- **Exempelfrågor.** Spiken använder Västervik: bibliotekets öppettider, kommunalskatten, tåget på Tjustbanen, elsparkcyklar, Nobelpriset. Textbitarna är påhittade. Vilka frågor ska det bli på riktigt, och vilka sidor ska klippas?
 - **Inspelningen av steg 2, 6 och 7.** Vem kör frågorna i en AI-söktjänst och hur sparas svaren? Sidan får inte peka ut tjänsten.
 - **Fri fråga eller förvalda.** Se `docs/PLAN.md`.
 - **Likhetstalen i bilden.** MiniLM ger ibland negativa tal för orelaterade par. Ska bilden visa talet rakt av, eller en skala från 0 till 1?
