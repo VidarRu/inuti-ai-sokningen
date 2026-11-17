@@ -4,10 +4,294 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inuti AI-sökningen</title>
+  <meta name="description" content="Scrolla dig igenom en AI-söktjänst. Följ en fråga från sökrutan till svaret med källhänvisningar, och se var det kan gå fel på vägen.">
   <meta name="theme-color" content="#04050c">
-  <style>body { background: #04050c; color: #eef1fb; font: 1.05rem/1.6 system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; }</style>
+  <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
-  <p>Inuti AI-sökningen byggs. Den tekniska spiken finns på <a href="/spik.html" style="color:#ffb24a">/spik.html</a>.</p>
+  <a class="skip" href="#steg-1">Hoppa förbi inledningen</a>
+
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div id="labels" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <p id="yours" class="yours" hidden>Din fråga: <q id="yours-text"></q> <a href="#steg-1">Byt</a></p>
+    <p id="model-status" class="status" role="status" aria-live="polite">
+      <span class="dot" aria-hidden="true"></span><span id="model-status-text">Visar förberäknade exempel</span>
+    </p>
+    <button id="load-model" class="ghost" hidden>Starta modellen (118 MB)</button>
+    <button id="reset-view" class="ghost" hidden>Återställ vyn</button>
+    <button id="pause" class="ghost" aria-pressed="false">Pausa rörelse</button>
+    <button id="fullscreen" class="ghost" aria-pressed="false">Helskärm</button>
+    <p id="model-note" class="model-note" hidden><span id="model-note-text"></span> <button type="button" id="model-note-close" class="link-button">Stäng</button></p>
+  </header>
+
+  <nav class="steps" aria-label="Stegen i berättelsen">
+    <ol>
+      <li><a href="#steg-0"><span>Svaret som bara kommer</span></a></li>
+      <li><a href="#steg-1"><span>Din fråga</span></a></li>
+      <li><a href="#steg-2"><span>Omformuleringen</span></a></li>
+      <li><a href="#steg-3"><span>Träffarna</span></a></li>
+      <li><a href="#steg-4"><span>Den lurande träffen</span></a></li>
+      <li><a href="#steg-5"><span>Utdragen</span></a></li>
+      <li><a href="#steg-6"><span>Svaret</span></a></li>
+      <li><a href="#steg-7"><span>Hänvisningen</span></a></li>
+      <li><a href="#steg-8"><span>Vad gör du?</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- Varje scen är en sträcka att scrolla. Inget innehåll rör sig: texten står
+       still i bild och kameran åker inåt. Texterna är platshållare (steg 5 i planen). -->
+  <main>
+    <!-- 0 -->
+    <section class="scene" id="steg-0" style="--len:1.6" aria-labelledby="h0">
+      <div class="hud">
+        <div class="intro">
+          <p class="kicker">AI-Folkbildaren visar</p>
+          <h1 id="h0">Inuti AI-sök&shy;ningen</h1>
+          <p class="lead">[Platshållare] Så här ser det ut: du skriver en fråga, och ett svar kommer, säkert formulerat och med små siffror som pekar på källor. Vi följer frågan in och ser stegen som bilden döljer.</p>
+          <div class="mock" aria-label="En påhittad bild av en AI-söktjänst">
+            <p class="mock-q"><span class="mock-icon" aria-hidden="true">⌕</span><span id="mock-question">Vilka öppettider har Västerviks stadsbibliotek i jul?</span></p>
+            <p class="mock-a" id="mock-answer">[Platshållare för ett inspelat svar] Västerviks stadsbibliotek har öppet 27–30 december 10–16<sup>1</sup>. Julafton och nyårsafton är biblioteket stängt<sup>2</sup>. Med Meröppet kommer du in alla dagar 7–22<sup>3</sup>.</p>
+            <p class="mock-src"><span>1 bibliotek.vastervik.se</span><span>2 oppettider.nu</span><span>3 bibliotek.vastervik.se</span></p>
+          </div>
+          <p class="scrollhint" aria-hidden="true"><span></span>Scrolla för att följa frågan in</p>
+          <p class="sr-only">Bildbeskrivning: en sökruta med en fråga och ett färdigt svar med fotnötter, framför ett lugnt fält av blå ljuspunkter. När du scrollar löses rutan upp och punkterna drar isär.</p>
+          <details class="more">
+            <summary>Så här är det egentligen</summary>
+            <div class="panel">
+              <p>[Platshållare] Svaret i rutan är inspelat från en verklig AI-söktjänst, med datum. Sidan visar en förenklad, generisk kedja av steg. Kommersiella tjänster gör stegen på olika sätt och redovisar inte allt. Ingen enskild tjänst pekas ut.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1 -->
+    <section class="scene" id="steg-1" style="--len:3.6" data-in="1.2" aria-labelledby="h1">
+      <div class="hud">
+        <div class="stack">
+          <div class="sub">
+            <h2 id="h1"><span>1</span> Din fråga</h2>
+            <p class="line">[Platshållare] Allt börjar med en fråga. Välj en av de här, så följer vi den genom hela kedjan.</p>
+            <p class="line">[Platshållare] Frågan är de orange punkterna. Håll ögonen på dem.</p>
+          </div>
+          <div class="dock">
+            <div class="chips" id="questions" role="group" aria-label="Välj en fråga"></div>
+            <form id="question-form" autocomplete="off">
+              <label for="question">Egen fråga</label>
+              <div class="inputrow">
+                <input id="question" type="text" maxlength="120" placeholder="kräver att modellen är startad" spellcheck="false" disabled>
+                <button type="submit" disabled>Använd</button>
+              </div>
+            </form>
+            <details class="more">
+              <summary>Så här är det egentligen</summary>
+              <div class="panel">
+                <p>[Platshållare] De förvalda frågorna har spelats in i en riktig AI-söktjänst. En egen fråga rankas bara mot sidans lilla, handgjorda korpus, och får inget inspelat svar.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <p class="sr-only">Bildbeskrivning: ljuspunkterna har samlats i ett tätt, glödande klot. Mitt i står din fråga.</p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="scene" id="steg-2" style="--len:3.8" data-in="1.1" aria-labelledby="h2">
+      <div class="hud">
+        <div class="stack">
+          <div class="sub">
+            <h2 id="h2"><span>2</span> Omformuleringen</h2>
+            <p class="line">[Platshållare] Tjänsten söker inte på det du skrev. Först skrivs frågan om till flera sökfrågor.</p>
+            <p class="line">[Platshållare] Här delas din fråga i fyra strängar. Vid varje spets står en sökfråga som tjänsten faktiskt använde.</p>
+            <p class="line">[Platshållare] Ord läggs till, ord tas bort. Det som försvinner här kommer inte tillbaka.</p>
+          </div>
+          <div class="dock">
+            <p class="readout" id="split-readout">Inspelat exempel</p>
+            <p class="hint wide" id="split-note">Sökfrågorna är inspelade från en verklig körning, med datum. De räknas inte fram här.</p>
+            <details class="more figures">
+              <summary>Visa som lista</summary>
+              <div class="panel"><ol id="split-list" class="plainlist"></ol></div>
+            </details>
+            <details class="more">
+              <summary>Så här är det egentligen</summary>
+              <div class="panel">
+                <p>[Platshållare] Omformuleringen görs av en språkmodell som räknar fram sannolika sökfrågor utifrån din text. Hur många och vilka beror på tjänsten. Vissa tjänster visar dem, andra inte.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <p class="sr-only">Bildbeskrivning: klotet har dragits ut i fyra strängar av ljuspunkter som pekar åt olika håll. Vid varje spets står en sökfråga.</p>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="scene" id="steg-3" style="--len:4.6" data-in="1.4" aria-labelledby="h3">
+      <div class="hud">
+        <div class="stack">
+          <div class="sub">
+            <h2 id="h3"><span>3</span> Träffarna</h2>
+            <p class="line">[Platshållare] Nu är vi i webben. Varje ljus punkt är en sida, och platsen bestäms av vad sidan handlar om.</p>
+            <p class="line">[Platshållare] Din fråga är också en punkt. De sidor som ligger närmast rankas högst.</p>
+            <p class="line">[Platshållare] Talen är likheten i betydelse mellan frågan och sidan, uträknade av en liten modell. Inget av dem säger om sidan har rätt.</p>
+          </div>
+          <div class="dock">
+            <p class="readout" id="rank-readout">Förberäknat med samma modell</p>
+            <details class="more figures">
+              <summary>Visa som lista</summary>
+              <div class="panel">
+                <p class="paneltitle">Sidorna i rankningsordning, med likhetstalet (1 = identisk betydelse)</p>
+                <ol id="hits" class="neighbors"></ol>
+              </div>
+            </details>
+            <details class="more">
+              <summary>Så här är det egentligen</summary>
+              <div class="panel">
+                <p>[Platshållare] Sidan använder en liten flerspråkig inbäddningsmodell som gör om text till 384 tal. Likheten är vinkeln mellan två sådana talföljder. Riktiga söktjänster kombinerar detta med ordsökning, länkar, datum och mycket annat, och deras index har miljarder sidor. Här finns ett trettiotal.</p>
+                <p>Bilden är en projektion av 384 dimensioner ner till tre. Den förvränger avstånden. Talen är uträknade i det riktiga rummet.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <p class="sr-only">Bildbeskrivning: kameran åker in i ett stjärnfält. Ett trettiotal punkter lyser som sidor. En orange punkt är din fråga, och vita linjer går från den till de närmaste sidorna, med likhetstalet vid varje.</p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="scene" id="steg-4" style="--len:3.6" data-in="0.9" aria-labelledby="h4">
+      <div class="hud">
+        <div class="stack">
+          <div class="sub">
+            <h2 id="h4"><span>4</span> Den lurande träffen</h2>
+            <p class="line">[Platshållare] Titta på den här träffen. Den ligger nära frågan och rankas högt.</p>
+            <p class="line">[Platshållare] Men den är från ett annat år, eller från någon som vill sälja något. Rankningen mäter närhet i betydelse, inte om det stämmer.</p>
+          </div>
+          <div class="dock">
+            <p class="hint wide" id="lure-text"></p>
+            <details class="more">
+              <summary>Så här är det egentligen</summary>
+              <div class="panel">
+                <p>[Platshållare] Föråldrade sidor, satir och reklam skrivs ofta med samma ord som rätt svar, och hamnar därför nära i betydelserummet. Tjänster försöker väga in datum och avsändare, men det syns sällan för dig.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <p class="sr-only">Bildbeskrivning: kameran går runt din frågas punkt. En av de upplysta sidorna är markerad: den lurande träffen, med dess text utskriven.</p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="scene" id="steg-5" style="--len:3.8" data-in="1.3" aria-labelledby="h5">
+      <div class="hud">
+        <div class="stack">
+          <div class="out" id="excerpts" aria-live="polite"></div>
+          <div class="sub">
+            <h2 id="h5"><span>5</span> Utdragen</h2>
+            <p class="line">[Platshållare] Modellen får inte sidorna. Den får bitar av dem.</p>
+            <p class="line">[Platshållare] Här är fönstret: det som skrivarmodellen ser. Några rader från varje sida, och ingenting annat.</p>
+            <p class="line">[Platshållare] Det som inte klipptes ut finns inte för modellen. Inte heller det som stod stycket under.</p>
+          </div>
+          <div class="dock">
+            <p class="readout" id="window-readout"></p>
+            <details class="more">
+              <summary>Så här är det egentligen</summary>
+              <div class="panel">
+                <p>[Platshållare] Sidorna delas i stycken, och de stycken som ligger närmast sökfrågorna läggs i modellens kontext tillsammans med din fråga och instruktioner från tjänsten. Hur många och hur långa beror på tjänsten.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <p class="sr-only">Bildbeskrivning: ljuspunkterna bildar ett smalt, högt fönster. Korta textutdrag ur de högst rankade sidorna flyger in i det.</p>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="scene" id="steg-6" style="--len:4" data-in="1.2" aria-labelledby="h6">
+      <div class="hud">
+        <div class="stack">
+          <p id="answer" class="out answer" aria-live="polite"></p>
+          <div class="sub">
+            <h2 id="h6"><span>6</span> Svaret</h2>
+            <p class="line">[Platshållare] Nu skrivs svaret, ord för ord. Varje ord väljs efter sannolikhet, utifrån utdragen och din fråga.</p>
+            <p class="line">[Platshållare] Hur det går till visas i <a href="https://insidan-av-ai.vercel.app" target="_blank" rel="noopener">Inuti AI-hjärnan</a>. Poängen här: texten kan flyta vidare förbi det som stod i utdragen.</p>
+            <p class="line">[Platshållare] Siffrorna i hakparentes sätts dit av tjänsten. Vi tittar på dem i nästa steg.</p>
+          </div>
+          <div class="dock">
+            <p class="readout" id="answer-readout"></p>
+            <button id="answer-again" type="button">Skriv igen</button>
+            <details class="more">
+              <summary>Så här är det egentligen</summary>
+              <div class="panel">
+                <p>[Platshållare] Svaret är inspelat från en verklig körning och skrivs här fram i samma takt som en modell brukar. Inget räknas fram på den här sidan i det här steget. Hänvisningarna läggs till av tjänsten, ofta av samma modell som skriver texten.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <p class="sr-only">Bildbeskrivning: kameran åker genom en ström av ljuspunkter som rinner förbi. Mitt i skrivs svaret fram ord för ord, med fotnötter.</p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="scene" id="steg-7" style="--len:4.4" data-in="1.3" aria-labelledby="h7">
+      <div class="hud">
+        <div class="stack">
+          <div class="out check" id="check" hidden></div>
+          <div class="sub">
+            <h2 id="h7"><span>7</span> Hänvisningen</h2>
+            <p class="line">[Platshållare] Varje siffra i svaret är en tråd till en sida i webben. Dra i en tråd.</p>
+            <p class="line">[Platshållare] Ofta står påståendet i källan. Ibland står det inte. Siffran ser likadan ut i båda fallen.</p>
+            <p class="line">[Platshållare] Det är därför hänvisningen ska kontrolleras, inte bara finnas.</p>
+          </div>
+          <div class="dock">
+            <div class="chips" id="threads" role="group" aria-label="Dra i en källtråd"></div>
+            <details class="more">
+              <summary>Så här är det egentligen</summary>
+              <div class="panel">
+                <p>[Platshållare] Kontrollen av varje hänvisning är gjord för hand när svaret spelades in, med datum. Hänvisningar stämmer ofta. Men en siffra intill ett påstående visar bara att tjänsten kopplade dem ihop, inte att källan säger det som står.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <p class="sr-only">Bildbeskrivning: webben syns på håll. Orange trådar går från svaret till de sidor som hänvisningarna pekar på. När du väljer en hänvisning åker kameran till sidan, och påståendet läggs intill källtexten.</p>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="scene" id="steg-8" style="--len:3.4" data-in="1.1" aria-labelledby="h8">
+      <div class="hud">
+        <div class="closing">
+          <div class="stack">
+            <div class="sub">
+              <p class="line">[Platshållare] Vi backar ut. Så många steg mellan din fråga och svaret, och inget av dem kontrollerade om det stämde.</p>
+            </div>
+          </div>
+        </div>
+        <div class="outro">
+          <h2 id="h8">Vad gör du?</h2>
+          <p>[Platshållare] Du har följt en fråga genom kedjan: omformulerad, matchad mot sidor efter betydelse, klippt i utdrag, skriven fram med sannolikheter och försedd med hänvisningar. Hänvisningarna stämmer ofta. Tre saker kan du kontrollera själv.</p>
+          <ul class="questions">
+            <li><strong>Står påståendet i källan?</strong> Öppna källan och leta efter just det som påstås.</li>
+            <li><strong>Vem är avsändaren?</strong> När skrevs sidan, och vad vill den som skrev?</li>
+            <li><strong>Vad ger en annan sökväg?</strong> Ställ frågan igen på ett annat sätt, eller sök utan AI.</li>
+          </ul>
+          <p class="outrolinks"><a class="button" href="https://aifolkbildaren.se">Till AI-Folkbildaren</a> <a class="textlink" href="#steg-1">Börja om med en ny fråga</a> <a class="textlink" href="https://insidan-av-ai.vercel.app">Inuti AI-hjärnan</a></p>
+          <details class="more up">
+            <summary>Så här är det egentligen</summary>
+            <div class="panel">
+              <p>[Platshållare] Sidan visar en generisk, förenklad kedja. Verkliga tjänster gör stegen på olika sätt, lägger till egna kontroller och ändras ofta. Slutsatsen är inte att AI alltid hittar på, utan att det som är viktigt behöver kontrolleras.</p>
+            </div>
+          </details>
+          <footer>
+            <p>Rankningen i steg 3 och 4 räknas med modellen <a href="https://huggingface.co/Xenova/paraphrase-multilingual-MiniLM-L12-v2">paraphrase-multilingual-MiniLM-L12-v2</a>. De inspelade stegen är märkta med datum. Texterna är CC BY 4.0 och koden MIT. Sidan är gjord av AI-Folkbildaren.</p>
+          </footer>
+        </div>
+        <p class="sr-only">Bildbeskrivning: kameran har backat ut. Webben syns på håll som en galax, och din frågas orange punkt lyser bland sidorna.</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

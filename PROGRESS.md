@@ -1,6 +1,6 @@
 # Status
 
-Senast uppdaterad 2026-11-16 (teknisk spik klar).
+Senast uppdaterad 2026-11-17 (steg 3, partikelskelettet, klart).
 
 ## Klart
 
@@ -13,12 +13,17 @@ Senast uppdaterad 2026-11-16 (teknisk spik klar).
 
 - **Mall för inspelningar** (2026-11-16): `docs/INSPELNING.md` beskriver hur Vidar spelar in en körning. Ifyllda mallar läggs i `inspelningar/`, och `scripts/inspelning_till_json.mjs` gör om dem till `public/data/inspelningar.json` (provkört på ett påhittat exempel, sedan borttaget). Skriptet varnar om meningen vid en hänvisning inte finns ordagrant i svaret.
 
+- **Steg 3, partikelskelett och scroll** (2026-11-17). Hela sidan går att scrolla igenom, nio scener (0–8), med platshållartexter märkta [Platshållare]. Hjärnprojektets system är återanvänt: shadern, kamerablandningen, vridningen (dra, piltangenter, dubbelklick), helskärm, paus, etiketter i 3D, stegprickarna, undertexterna och listen. 24 000 partiklar (hjärnan har 64 000, här finns ingen bit-per-partikel att motivera fler).
+  - **Formerna** (`src/scene/shapes.js`): fält (scen 0, bakom den påhittade sökrutan som löses upp vid scroll), klot (1, frågan står mitt i), fyra strängar (2, en sökfråga vid varje spets), stjärnfält (3–4, sidorna på sina PCA-platser, frågan orange, träffarna vita med linjer och likhetstal), fönster (5, utdragen flyger in i takt med scrollen), ström (6, svaret skrivs ord för ord med fotnötter), stjärnfältet på håll (7–8, orange trådar från svaret till källorna, dra i en tråd så åker kameran dit och påståendet läggs intill källtexten med domen "står i källan / står inte / delvis").
+  - **Datan**: `scripts/forberakna_korpus.mjs` räknar korpusets vektorer, likheterna och 3D-platserna med samma modell i Node → `public/data/korpus_forberaknat.json` (94 kB). Sidan visar detta utan modellen. `public/data/inspelningar.json` läses om den finns; annars byggs tydligt märkta platshållare för sökfrågor, svar och kontroll.
+  - **Provat** i Chromium utan grafikkort, 1280 × 720 och iPhone-bredd: alla scener, inga fel i konsolen. Inte provat: riktig dator med grafikkort, skärmläsare, minskad rörelse.
+  - **Kända brister** (finputs, steg 6): etiketterna i stjärnfältet går utanför kanten på mobil; scen 0:s fält är dämpat; den egna frågan är avstängd tills modellen är inkopplad; i scen 7 kopplas en inspelnings hänvisningar till de högst rankade sidorna i ordning, inte till rätt sida via adressen (görs när inspelningarna finns).
+
 ## Nästa steg
 
-1. **Vidar spelar in de tre (fyra) frågorna** enligt `docs/INSPELNING.md`.
-2. **Steg 2, förinspelad data.** Riktiga körningar i en AI-söktjänst för två eller tre frågor, sparade med datum i `public/data/`. Kan inte göras från byggmiljön (den når inte tjänsterna). Samtidigt: byt spikens påhittade textbitar mot riktiga, daterade utdrag, och förberäkna deras vektorer med samma modell i Node (`scripts/`), så att steg 3 fungerar utan modellen.
-3. **Steg 3, partikelskelett och scroll.** Kopiera `stage.js`, `shapes.js`, scrollkoden och `style.css` från hjärnprojektet och byt ut formerna: sökruta som löses upp, frågan som delas, stjärnfält med sökfrågan och träffarna som grannar, kontextfönstret, svaret med trådar.
-4. **Steg 4, koppla in modellen** i stjärnfältet.
+1. **Steg 2, lägg in Vidars inspelningar.** Vidar har gjort dem (2026-11-17) men de är inte inlagda. Fyll i `inspelningar/*.txt` enligt `docs/INSPELNING.md`, kör `node scripts/inspelning_till_json.mjs`. Byt sedan korpusets platshållartexter mot utdragen ur inspelningarna (lägg till fälten `url`, `fetched` och `lure: true` på de lurande), kör `node scripts/forberakna_korpus.mjs` igen, och koppla hänvisningarna i scen 7 till rätt sida via adressen (`buildAnswer` i `src/main.js`). Scen 0:s påhittade svar byts mot det inspelade.
+2. **Steg 4, koppla in modellen.** Workern och klienten finns (`src/sok/`). Att göra i `src/main.js`: knappen "Starta modellen", bädda in korpuset en gång (eller använd `vectors` i det förberäknade), ranka en egen fråga live, lägg frågans punkt med PCA-komponenterna (spara `mean` och `comps` i det förberäknade), och visa "räknas i din webbläsare" i stället för "förberäknat". På mobil: bara förberäknat.
+3. **Steg 5, texter** (alla [Platshållare]) och **steg 6, finputs**.
 
 ## Beslut
 
