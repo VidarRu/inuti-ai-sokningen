@@ -7,5 +7,5 @@ export const MODEL_ID = 'Xenova/paraphrase-multilingual-MiniLM-L12-v2';
 export const MODEL_DTYPE = 'q8';           // onnx/model_quantized.onnx, 118 MB
 export const MODEL_FILE = 'onnx/model_quantized.onnx';
 export const MODEL_BYTES = 118_308_185;    // för förloppsindikatorn
-export const LOCAL_MODEL_BASE = import.meta.env.VITE_MODEL_BASE || '';
+export const LOCAL_MODEL_BASE = (typeof import.meta.env !== 'undefined' && import.meta.env.VITE_MODEL_BASE) || ''; // tom i Node
 export const REMOTE_HOST = 'https://huggingface.co/';

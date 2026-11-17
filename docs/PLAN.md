@@ -88,5 +88,10 @@ Uppdatera `PROGRESS.md` och committa efter varje steg.
 - [ ] Fri fråga eller förvalda frågor? En fri fråga kräver att korpuset räcker. Förvalda frågor är säkrare för en dragning. Förslag: förvalda frågor i grunden, och en fri fråga som bara rankar samma korpus (med en tydlig notis om att korpuset är litet och handgjort).
 - [ ] Ska steg 8 ta in Vidars lekmannastrategier för verifiering? De hänger ihop med hans planerade uppdragsgenerator.
 - [ ] Namn och adress: *Inuti AI-sökningen*, och var ska den ligga i förhållande till *Inuti AI-hjärnan*?
-- [ ] Vilka exempelfrågor? Svenska, gärna lokala, med ett svar som kan ha ändrats nyligen. Spikens provkorpus använder Västervik: bibliotekets öppettider, kommunalskatten och tåget på Tjustbanen. Textbitarna där är påhittade och måste bytas mot riktiga, daterade utdrag.
+- [x] **Exempelfrågor, valda av Vidar 2026-11-16:**
+  1. *Vilka öppettider har Västerviks stadsbibliotek i jul?* Främst steg 4, den föråldrade träffen: julens tider ändras varje år och är kanske inte publicerade i november, så fjolårets tider och öppettidssajter med reklam rankas högt. Klockslagen är lätta att kontrollera i steg 7.
+  2. *Vilken är den bästa appen för att låna e-böcker gratis?* Steg 4, den reklamdrivna träffen: jämförelsesidor med affiliatelänkar lyfter prenumerationstjänster i stället för bibliotekets appar. I steg 2 syns om tjänsten skriver om "gratis" eller "bibliotek".
+  3. *Vilka regler gäller för elsparkcyklar i Sverige?* Steg 6 och 7: många påståenden och hänvisningar, och reglerna har ändrats flera gånger.
+  4. (Reserv) *Vad kostar ett månadskort på bussen i Kalmar län nu?* Steg 2: ordet "nu" visar om tjänsten lägger till ett årtal i sökfrågorna.
+  Spikens korpus har platshållartexter för alla fyra. De byts mot riktiga, daterade utdrag ur inspelningarna.
 - [ ] Hur spelas steg 2, 6 och 7 in? Byggmiljön når inte AI-söktjänsterna. Vidar kör frågorna själv och sparar svaren, eller så får en miljö tillgång till en tjänst med öppet API.

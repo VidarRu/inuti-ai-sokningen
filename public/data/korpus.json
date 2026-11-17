@@ -1,13 +1,11 @@
 {
  "version": "spik 2026-11-16",
- "note": "Provkorpus för den tekniska spiken. Handskrivna textbitar, inte riktiga webbsidor.",
+ "note": "Provkorpus för den tekniska spiken. Handskrivna platshållare, inte riktiga webbsidor. Byts mot daterade utdrag ur Vidars inspelningar (docs/INSPELNING.md).",
  "questions": [
-  "När har biblioteket i Västervik öppet?",
-  "Vem fick Nobelpriset i litteratur?",
-  "Får man parkera elsparkcykeln på trottoaren?",
-  "Går tåget från Västervik till Linköping just nu?",
-  "Hur hög är kommunalskatten i Västervik?",
-  "Hur fungerar en AI-sökmotor?"
+  "Vilka öppettider har Västerviks stadsbibliotek i jul?",
+  "Vilken är den bästa appen för att låna e-böcker gratis?",
+  "Vilka regler gäller för elsparkcyklar i Sverige?",
+  "Vad kostar ett månadskort på bussen i Kalmar län nu?"
  ],
  "passages": [
   {
@@ -97,6 +95,34 @@
   {
    "id": "eng",
    "text": "The public library in Västervik is open Monday to Thursday from 10 am to 7 pm."
+  },
+  {
+   "id": "jul-gammal",
+   "text": "Julöppet på Västerviks stadsbibliotek 2024: julafton stängt, 27–30 december 10–16, nyårsafton stängt."
+  },
+  {
+   "id": "jul-reklam",
+   "text": "Öppettider Västervik bibliotek jul – se alla öppettider och helgtider på Öppettider.nu. Jämför även priser på julklappar!"
+  },
+  {
+   "id": "ebok-bibl",
+   "text": "Med appen Biblio lånar du e-böcker och ljudböcker gratis med ditt lånekort från biblioteket."
+  },
+  {
+   "id": "ebok-reklam",
+   "text": "Bästa apparna för e-böcker 2026: 1. Storytel (prova gratis 14 dagar) 2. Nextory (prova gratis) 3. BookBeat. Klicka och börja läsa!"
+  },
+  {
+   "id": "elspark-regler",
+   "text": "Elsparkcyklar räknas som cyklar. Du får inte köra på trottoaren, och sedan 2022 får de inte parkeras på gång- eller cykelbanor."
+  },
+  {
+   "id": "buss-pris",
+   "text": "Från 1 januari 2026 kostar ett 30-dagarskort för vuxen i Kalmar län 1 250 kronor i KLT:s app."
+  },
+  {
+   "id": "buss-gammal",
+   "text": "KLT:s periodkort för 30 dagar kostar 990 kronor (2021). Köp i appen eller ombord."
   }
  ]
 }
