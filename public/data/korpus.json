@@ -1,6 +1,6 @@
 {
- "version": "spik 2026-11-16",
- "note": "Provkorpus för den tekniska spiken. Handskrivna platshållare, inte riktiga webbsidor. Byts mot daterade utdrag ur Vidars inspelningar (docs/INSPELNING.md).",
+ "version": "2026-11-17",
+ "note": "Korpuset för steg 3–5. Utdragen (kind: utdrag) kommer ur de inspelade körningarna 2026-11-16, se inspelningar/2026-11-16.md. Myndigheters och kommuners texter är återgivna ordagrant. Från kommersiella sidor (rights: citat) finns bara korta citat; de är inte CC BY. Fyllnadstexterna (kind: fyllnad) är handskrivna och är inga riktiga sidor. verbatim: true betyder att varje rad står ordagrant i inspelningen; delvis betyder att citaten är ordagranna men att något är återgivet med egna ord.",
  "questions": [
   "Vilka öppettider har Västerviks stadsbibliotek i jul?",
   "Vilken är den bästa appen för att låna e-böcker gratis?",
@@ -9,120 +9,175 @@
  ],
  "passages": [
   {
-   "id": "bibl-oppet",
-   "text": "Stadsbiblioteket i Västervik har öppet måndag till torsdag 10–19, fredag 10–17 och lördag 11–14. Söndagar stängt."
+   "id": "jul-2025",
+   "kind": "utdrag",
+   "text": "Västerviks stadsbibliotek\n23 december, kl.10.00-15.00\n24 december Julafton, stängt\n25 december Juldagen, stängt\n26 december Annandag Jul, stängt\n27 december kl.10.00-13.00\n30 december, kl.10.00-15.00\n31 december Nyårsafton, stängt\n1 januari, Nyårsdagen, stängt\n5 januari, Trettondagsafton, stängt\n6 januari, Trettondagen, stängt",
+   "url": "https://www.vastervik.se/nyheter/vara-oppettider-i-jul-nyar-och-trettondagsafton/",
+   "heading": "Bibliotekets öppettider",
+   "dated": "2025-12-22",
+   "fetched": "2026-11-16",
+   "fetchedNote": "Död länk 2026-11-16. Texten är hämtad ur web.archive.org, sparad 2025-12-31.",
+   "sender": "Västerviks kommun",
+   "rights": "offentlig",
+   "verbatim": true,
+   "lure": true,
+   "lureNote": "Fjolårets sida: den gäller julen 2025 och är daterad 2025-12-22. I dag är länken död."
   },
   {
-   "id": "bibl-meropp",
-   "text": "Med Meröppet kan du som har lånekort och är över 18 år besöka biblioteket även när personalen har gått hem, alla dagar 7–22."
+   "id": "jul-2026",
+   "kind": "utdrag",
+   "text": "Västerviks stadsbibliotek\nAvvikande öppettider 2026:\n[…]\n23 dec dag innan Julafton, onsdag 10 - 15\n24 dec Julafton, torsdag Stängt\n25 dec Juldagen, fredag Stängt\n26 dec Annandag Jul, lördag Stängt\n30 dec Dag innan nyårsafton 10 - 15\n31 dec Nyårsafton, torsdag Stängt",
+   "url": "https://bibliotek.vastervik.se/avvikande-öppettider",
+   "fetched": "2026-11-16",
+   "sender": "Västerviks bibliotek",
+   "rights": "offentlig",
+   "verbatim": true
   },
   {
-   "id": "bibl-gammal",
-   "text": "Biblioteket i Västervik: öppettider 2019. Måndag–fredag 10–18, lördag 10–13. Välkommen in!"
+   "id": "bibl-ordinarie",
+   "kind": "utdrag",
+   "text": "mån–tors 10:00–19:00, fre 10:00–17:00, lör 10:00–13:00, sön stängt.",
+   "url": "https://bibliotek.vastervik.se/-/stadsbibliotek",
+   "fetched": "2026-11-16",
+   "sender": "Västerviks bibliotek",
+   "rights": "offentlig",
+   "verbatim": false,
+   "verbatimNote": "Bibliotekets ordinarie öppettider, återgivna i kortform."
   },
   {
-   "id": "bibl-gamleby",
-   "text": "Gamleby bibliotek är öppet tisdag och torsdag 13–18 samt onsdag 10–15."
+   "id": "ebok-hp",
+   "kind": "utdrag",
+   "text": "Libby by Overdrive – best book reading app for iOS",
+   "url": "https://www.hp.com/us-en/tech-takes/software/best/best-reading-apps-phone-table.html",
+   "heading": "21 Best Reading Apps for Your Phone or Tablet",
+   "dated": "2021-07-17",
+   "fetched": "2026-11-16",
+   "sender": "En datortillverkare (amerikansk webbplats)",
+   "rights": "citat",
+   "verbatim": true,
+   "lure": true,
+   "lureNote": "En engelskspråkig topplista från 2021, skriven av en datortillverkare. Sidfoten säger att sajten kan få intäkter från försäljning av produkterna som visas. Den låg högst bland träffarna som visades.",
+   "pending": "Vidar kopierar själv ingressens andra stycke och punkt 1 (två till fyra meningar), och raden \"Disclosure\" i sidfoten."
   },
   {
-   "id": "elspark",
-   "text": "Från och med den 1 september 2022 är det förbjudet att parkera elsparkcyklar på gång- och cykelbanor, enligt nya regler från regeringen."
+   "id": "ebok-pcforalla",
+   "kind": "utdrag",
+   "text": "De flesta bibliotek låter oss låna e-böcker.",
+   "url": "https://www.pcforalla.se/article/1697112/e-bocker.html",
+   "heading": "Libris: Låna på biblioteket",
+   "fetched": "2026-11-16",
+   "fetchedNote": "Inget datum i artikeltexten. Artikeln tar först upp köp och abonnemang (Storytel, Nextory, Bookbeat, Bokus) och bibliotekslån sist.",
+   "sender": "En svensk datortidning",
+   "rights": "citat",
+   "verbatim": true,
+   "pending": "Vidar kopierar själv resten av stycket \"Libris: Låna på biblioteket\"."
   },
   {
-   "id": "elspark-sat",
-   "text": "Regeringen föreslår nu att alla elsparkcyklar ska förses med en liten klocka som ringer när föraren tänker en dum tanke. Nyheten är ett aprilskämt."
+   "id": "ebok-biblio",
+   "kind": "utdrag",
+   "text": "Den bästa appen för e-böcker och ljudböcker på bibliotek.\n+83,000 Svenska titlar\n263 folkbibliotek i Sverige använder redan Biblio",
+   "url": "https://info.biblio.app/sv/",
+   "fetched": "2026-11-16",
+   "sender": "Företaget som säljer appen, på en sida riktad till bibliotek",
+   "rights": "citat",
+   "verbatim": true,
+   "verbatimNote": "Tre korta citat från olika ställen på sidan. Sidan säger också +750 bibliotek i Norden."
   },
   {
-   "id": "elspark-reklam",
-   "text": "Hyr elsparkcykel i hela stan! Första åket gratis med koden SOMMAR. Parkera var du vill, vi fixar resten."
+   "id": "elspark-ts",
+   "kind": "utdrag",
+   "text": "En elsparkcykel som går maximalt 20 km/tim och har en kontinuerlig märkeffekt på maximalt 250 watt, klassas som en cykel och får köras i allmän trafik.\n[…]\nFörare yngre än 15 år måste bära hjälm (men vi rekommenderar att alla som kör en elsparkcykel ska använda hjälm).",
+   "url": "https://www.transportstyrelsen.se/sv/vagtrafik/fordon/fordonsregler/regler-for-olika-fordonsslag/elsparkcykel/",
+   "fetched": "2026-11-16",
+   "sender": "Transportstyrelsen",
+   "rights": "offentlig",
+   "verbatim": true
   },
   {
-   "id": "nobel-2024",
-   "text": "Nobelpriset i litteratur 2024 tilldelades Han Kang, sydkoreansk författare, för hennes intensiva poetiska prosa."
+   "id": "elspark-aklagare",
+   "kind": "utdrag",
+   "text": "Enligt ett EU-direktiv ska man ha trafikförsäkring för alla elsparkcyklar som är konstruerade för en hastighet över 14 km/tim och samtidigt har en nettovikt som överstiger 25 kg.",
+   "url": "https://www.aklagare.se/for-media/aktuellt-pa-aklagarmyndigheten/2026/april/regler-for-elsparkcyklar/",
+   "dated": "2026-04",
+   "fetched": "2026-11-16",
+   "sender": "Åklagarmyndigheten",
+   "rights": "offentlig",
+   "verbatim": true
   },
   {
-   "id": "nobel-2023",
-   "text": "Nobelpriset i litteratur 2023 gick till den norske författaren Jon Fosse."
+   "id": "elspark-regeringen",
+   "kind": "utdrag",
+   "text": "Av dessa är Sverige det enda landet som saknar ålders- och alkoholgräns för användande av elsparkcykel.",
+   "url": "https://www.regeringen.se/pressmeddelanden/2026/08/regeringen-vill-oka-trafiksakerheten-vid-anvandning-av-elsparkcyklar/",
+   "dated": "2026-08-25",
+   "fetched": "2026-11-16",
+   "sender": "Regeringskansliet",
+   "rights": "offentlig",
+   "verbatim": true,
+   "verbatimNote": "\"Av dessa\" syftar på de nordiska länderna, som nämns i meningen före. Utan den meningen tappar utdraget sitt sammanhang."
   },
   {
-   "id": "nobel-fys",
-   "text": "Nobelpriset i fysik 2024 delades mellan John Hopfield och Geoffrey Hinton för grundläggande upptäckter som möjliggör maskininlärning."
+   "id": "buss-halvering",
+   "kind": "utdrag",
+   "text": "Kalmar länstrafik halverar priset på månadsbiljetter för resor 1 juli – 31 december.\n[…]\nDärför kommer kollektivtrafiknämnden att besluta slutdatum för försäljning av rabatterade biljetter under hösten.\n[Tabell] 5 zoner (län) vuxen 868 kr, student 651 kr, ungdom 521 kr; 1 zon vuxen 356 kr; Seniorbiljett län 153 kr.",
+   "url": "https://regionkalmar.se/nyhetslista/kalmar-lanstrafik-sager-ja-till-halverade-manadsbiljetter/",
+   "dated": "2026-06-18",
+   "fetched": "2026-11-16",
+   "sender": "Region Kalmar län (pressmeddelande)",
+   "rights": "offentlig",
+   "verbatim": "delvis",
+   "verbatimNote": "De två meningarna är ordagranna. Tabellen är återgiven i kortform."
   },
   {
-   "id": "tag-vvik",
-   "text": "Tåget mellan Västervik och Linköping går via Åtvidaberg och tar ungefär två timmar. Linjen kallas Tjustbanan."
-  },
-  {
-   "id": "tag-inst",
-   "text": "Under hösten 2025 är Tjustbanan avstängd för banarbeten och tågen ersätts med buss mellan Västervik och Åtvidaberg."
-  },
-  {
-   "id": "kaffe",
-   "text": "Kaffe är en dryck som bryggs på rostade och malda kaffebönor. Sverige hör till de länder som dricker mest kaffe per person."
-  },
-  {
-   "id": "katt",
-   "text": "Katten är ett litet rovdjur som hållits som husdjur i tusentals år. En tamkatt sover omkring 14 timmar per dygn."
-  },
-  {
-   "id": "vaccin",
-   "text": "Regionen erbjuder gratis vaccination mot säsongsinfluensa till alla som fyllt 65 år. Vaccinationen startar den 4 november."
-  },
-  {
-   "id": "kommun-skatt",
-   "text": "Kommunfullmäktige beslutade i november att höja kommunalskatten med 50 öre från 2026."
-  },
-  {
-   "id": "kommun-skatt-gammal",
-   "text": "Västerviks kommun sänker skatten 2015: kommunalskatten blir 21,16 kronor."
-  },
-  {
-   "id": "sim",
-   "text": "Simhallen har öppet alla dagar 6–21. Morgonsim för vuxna vardagar 6–8."
-  },
-  {
-   "id": "vader",
-   "text": "SMHI varnar för kraftig blåst längs Smålandskusten under natten mot torsdag."
+   "id": "buss-ordinarie",
+   "kind": "utdrag",
+   "text": "Ordinarie priser för 30-dagarsbiljett\n5 eller fler zoner, vuxen: 1 736 kr\nKalmar kommun, vuxen: 529 kr",
+   "url": "https://www.klt.se/biljetter-och-priser/priser-och-biljetter/30-dagarsbiljett/",
+   "fetched": "2026-11-16",
+   "sender": "Kalmar länstrafik",
+   "rights": "offentlig",
+   "verbatim": "delvis",
+   "verbatimNote": "Rubriken är ordagrann. Priserna är återgivna i kortform."
   },
   {
    "id": "ai-sok",
+   "kind": "fyllnad",
    "text": "En AI-söktjänst hämtar först webbsidor, klipper ut korta utdrag och låter sedan en språkmodell skriva ett svar utifrån utdragen."
   },
   {
    "id": "kallkritik",
+   "kind": "fyllnad",
    "text": "Källkritik innebär att granska vem som står bakom en uppgift, när den publicerades och om den går att bekräfta i en oberoende källa."
   },
   {
-   "id": "eng",
-   "text": "The public library in Västervik is open Monday to Thursday from 10 am to 7 pm."
+   "id": "kaffe",
+   "kind": "fyllnad",
+   "text": "Kaffe är en dryck som bryggs på rostade och malda kaffebönor."
   },
   {
-   "id": "jul-gammal",
-   "text": "Julöppet på Västerviks stadsbibliotek 2024: julafton stängt, 27–30 december 10–16, nyårsafton stängt."
+   "id": "katt",
+   "kind": "fyllnad",
+   "text": "Katten är ett litet rovdjur som har hållits som husdjur i tusentals år."
   },
   {
-   "id": "jul-reklam",
-   "text": "Öppettider Västervik bibliotek jul – se alla öppettider och helgtider på Öppettider.nu. Jämför även priser på julklappar!"
+   "id": "nobel-2024",
+   "kind": "fyllnad",
+   "text": "Nobelpriset i litteratur 2024 tilldelades Han Kang, sydkoreansk författare, för hennes intensiva poetiska prosa."
   },
   {
-   "id": "ebok-bibl",
-   "text": "Med appen Biblio lånar du e-böcker och ljudböcker gratis med ditt lånekort från biblioteket."
+   "id": "nobel-2023",
+   "kind": "fyllnad",
+   "text": "Nobelpriset i litteratur 2023 gick till den norske författaren Jon Fosse."
   },
   {
-   "id": "ebok-reklam",
-   "text": "Bästa apparna för e-böcker 2026: 1. Storytel (prova gratis 14 dagar) 2. Nextory (prova gratis) 3. BookBeat. Klicka och börja läsa!"
+   "id": "nobel-fys",
+   "kind": "fyllnad",
+   "text": "Nobelpriset i fysik 2024 delades mellan John Hopfield och Geoffrey Hinton för grundläggande upptäckter som möjliggör maskininlärning."
   },
   {
-   "id": "elspark-regler",
-   "text": "Elsparkcyklar räknas som cyklar. Du får inte köra på trottoaren, och sedan 2022 får de inte parkeras på gång- eller cykelbanor."
-  },
-  {
-   "id": "buss-pris",
-   "text": "Från 1 januari 2026 kostar ett 30-dagarskort för vuxen i Kalmar län 1 250 kronor i KLT:s app."
-  },
-  {
-   "id": "buss-gammal",
-   "text": "KLT:s periodkort för 30 dagar kostar 990 kronor (2021). Köp i appen eller ombord."
+   "id": "tag-vvik",
+   "kind": "fyllnad",
+   "text": "Tjustbanan är järnvägen mellan Västervik och Linköping, via Åtvidaberg."
   }
  ]
 }

@@ -1,0 +1,467 @@
+{
+ "note": "Inspelade körningar i två AI-söktjänster, kallade Tjänst A och Tjänst B. Byggd av scripts/inspelning_till_json.mjs ur inspelningar/. Tjänsternas namn visas inte.",
+ "conditions": "Inspelat 2026-11-16 i gratisversioner med webbsökning påslagen. Kontot var inloggat, så personliga inställningar och sparat minne kan ha påverkat svaren.",
+ "generated": "2026-11-17",
+ "runs": [
+  {
+   "id": "jul-a",
+   "question": "Vilka öppettider har Västerviks stadsbibliotek i jul?",
+   "label": "Tjänst A",
+   "recorded": "2026-11-16 19:58",
+   "searchQueries": [
+    "Vilka öppettider har Västerviks stadsbibliotek i jul?"
+   ],
+   "searchNote": "Tjänsten visade en enda sökfråga, ordagrant samma som frågan.",
+   "shownHits": [],
+   "shownHitsNote": "",
+   "answer": "Västerviks stadsbibliotek har kraftigt begränsade öppettider under jul och nyår. Enligt kommunens senaste julöppettider gäller följande: [1]\n\n| Datum | Öppettid |\n| 23 december | 10:00–15:00 |\n| 24–26 december | Stängt |\n| 27 december | 10:00–13:00 |\n| 28–29 december | Stängt |\n| 30 december | 10:00–15:00 |\n| 31 december | Stängt |\n| 1 januari | Stängt |\n| 2–4 januari | Stängt |\n| 5 januari | Stängt |\n| 6 januari | Stängt |\n\nBiblioteket ligger på Spötorget 7 i Västervik. Det finns även normalt \"meröppet\" med bibliotekskort vid vissa tider, men kommunens julöppettider anger inte att meröppet gäller under de stängda helgdagarna. [1][+2]\n\nKontakta biblioteket på 010-355 55 00 om du vill kontrollera just ditt besöksdatum. [2]",
+   "answerKind": "ordagrant",
+   "answerNote": "",
+   "sources": [
+    {
+     "key": "1",
+     "url": "https://www.vastervik.se/nyheter/vara-oppettider-i-jul-nyar-och-trettondagsafton/",
+     "passage": "jul-2025"
+    },
+    {
+     "key": "2",
+     "url": "https://www.vastervik.se/Uppleva-och-gora/Bibliotek/",
+     "passage": null
+    }
+   ],
+   "checks": [
+    {
+     "key": "1",
+     "quote": "| 23 december | 10:00–15:00 |",
+     "verdict": "ja",
+     "note": "Samma tid gäller i år."
+    },
+    {
+     "key": "1",
+     "quote": "| 27 december | 10:00–13:00 |",
+     "verdict": "ja",
+     "note": "Men källan gäller julen 2025. År 2026 är 27 december en söndag, och då är biblioteket stängt. Årets tider fanns i källistan, men svaret byggdes på fjolårets sida."
+    },
+    {
+     "key": "1",
+     "quote": "| 28–29 december | Stängt |",
+     "verdict": "nej",
+     "note": "Källan nämner inte de dagarna, vilket betyder ordinarie öppettider. I år är 28–29 december också ordinarie öppettider."
+    },
+    {
+     "key": "1",
+     "quote": "| 2–4 januari | Stängt |",
+     "verdict": "nej",
+     "note": "Källan nämner inte de dagarna, vilket betyder ordinarie öppettider."
+    },
+    {
+     "key": "2",
+     "quote": "Kontakta biblioteket på 010-355 55 00 om du vill kontrollera just ditt besöksdatum.",
+     "verdict": "ja",
+     "note": "Telefonnumret stämmer med kommunens bibliotekssida."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "jul-b",
+   "question": "Vilka öppettider har Västerviks stadsbibliotek i jul?",
+   "label": "Tjänst B",
+   "recorded": "2026-11-16 20:01",
+   "searchQueries": [],
+   "searchNote": "Tjänsten visade inga sökfrågor.",
+   "shownHits": [],
+   "shownHitsNote": "",
+   "answer": "Västerviks stadsbibliotek har publicerat sina avvikande öppettider för julen 2026.\n\nHär är tiderna:\n\n| Datum | Öppettider |\n| Onsdag 23 december | 10.00–15.00 |\n| Torsdag 24 december – julafton | Stängt |\n| Fredag 25 december – juldagen | Stängt |\n| Lördag 26 december – annandag jul | Stängt |\n| Söndag 27 december | Ordinarie söndagsstängt |\n| Måndag 28 december | Ordinarie öppettider |\n| Tisdag 29 december | Ordinarie öppettider |\n| Onsdag 30 december | 10.00–15.00 |\n| Torsdag 31 december – nyårsafton | Stängt |\n\nOrdinarie öppettider är:\n- Måndag–torsdag: 10.00–19.00\n- Fredag: 10.00–17.00\n- Lördag: 10.00–13.00\n\nKälla: Västerviks biblioteks officiella webbplats.\n\nSe avvikande öppettider hos Västerviks bibliotek. [1]",
+   "answerKind": "ordagrant",
+   "answerNote": "",
+   "sources": [
+    {
+     "key": "1",
+     "url": "https://bibliotek.vastervik.se/avvikande-öppettider",
+     "passage": "jul-2026"
+    }
+   ],
+   "checks": [
+    {
+     "key": "1",
+     "quote": "| Onsdag 23 december | 10.00–15.00 |",
+     "verdict": "ja",
+     "note": "Jultiderna stämmer med källan."
+    },
+    {
+     "key": "1",
+     "quote": "| Onsdag 30 december | 10.00–15.00 |",
+     "verdict": "ja",
+     "note": ""
+    },
+    {
+     "key": "1",
+     "quote": "| Måndag 28 december | Ordinarie öppettider |",
+     "verdict": "nej",
+     "note": "Källan säger inget om 27–29 december. Raden är en slutsats som svaret drar. Den stämmer: 28–29 december har biblioteket ordinarie öppettider i år."
+    },
+    {
+     "key": "1",
+     "quote": "- Måndag–torsdag: 10.00–19.00",
+     "verdict": "nej",
+     "note": "De ordinarie tiderna stämmer med bibliotekets webbplats, men de står på en annan sida (bibliotek.vastervik.se/-/stadsbibliotek), inte på den länkade."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "ebok-a",
+   "question": "Vilken är den bästa appen för att låna e-böcker gratis?",
+   "label": "Tjänst A",
+   "recorded": "2026-11-16 20:05",
+   "searchQueries": [
+    "Vilken är den bästa appen för att låna e-böcker gratis?"
+   ],
+   "searchNote": "Tjänsten visade en enda sökfråga, ordagrant samma som frågan.",
+   "shownHits": [
+    "21 Best Reading Apps for Your Phone or Tablet – HP",
+    "Two free apps every eBook reader should know about – pcworld",
+    "The 4 Best Apps For Free Books – BGR"
+   ],
+   "shownHitsNote": "De tre första träffarna som visades var engelska topplistor.",
+   "answer": "Libby (av OverDrive) är troligen det bästa svaret om ditt bibliotek använder tjänsten: det är gratis, enkelt och låter dig låna e-böcker, ljudböcker och tidskrifter med ditt bibliotekskort. I Sverige varierar dock utbudet och appen beroende på vilket bibliotek du är medlem hos. [play.google +1]\n\nBästa valet: Libby\n- Gratis att ladda ner och använda; du behöver bara ett giltigt bibliotekskort. [play.google]\n- Du kan låna e-böcker och ljudböcker, läsa offline och få automatisk återlämning när lånetiden går ut. [apps.apple +1]\n- Appen är lätt att använda och har reserveringssystem för populära titlar, men du kan behöva stå i kö för nya böcker. [pcworld +1]\n- Finns för både iPhone och Android. [play.google +1]\n\nOm du bor i Sverige\nKolla först med Stockholms stadsbibliotek eller ditt hemkommuns bibliotek, eftersom svenska bibliotek ofta använder egna e-lånetjänster snarare än Libby. Den gemensamma söktjänsten Libris hjälper dig att hitta ditt bibliotek och se vilka digitala lån som erbjuds. [pcforalla]\n\n| Behov | Bästa app/tjänst |\n| Nya e-böcker och ljudböcker gratis via biblioteket | Libby, om ditt bibliotek stödjer den [play.google +1] |\n| Gratis klassiker utan bibliotekskort | Project Gutenberg – över 75 000 titlar utan upphovsrätt [digitaltrends +1] |\n| Nordisk litteratur gratis | Projekt Runeberg [pcforalla] |\n| Direkt tillgång utan väntelista, där tillgängligt | Hoopla, men kräver deltagande bibliotek och har ofta månadsgräns [pcworld +1] |\n\nPraktiskt råd: Installera Libby först och sök efter ditt bibliotek. Om det inte dyker upp, använd bibliotekets egen e-låneapp eller Libris för att ta reda på vilken tjänst ditt bibliotek faktiskt använder. [play.google +1]",
+   "answerKind": "ordagrant",
+   "answerNote": "",
+   "sources": [
+    {
+     "key": "play.google",
+     "url": "https://play.google.com/store/apps/details/Libby_by_OverDrive",
+     "passage": null
+    },
+    {
+     "key": "apps.apple",
+     "url": "https://apps.apple.com/se/story/id1437694360",
+     "passage": null
+    },
+    {
+     "key": "pcworld",
+     "url": "https://www.pcworld.com/article/3184372/two-free-apps-every-ebook-reader-should-know-about.html",
+     "passage": null
+    },
+    {
+     "key": "pcforalla",
+     "url": "https://www.pcforalla.se/article/1697112/e-bocker.html",
+     "passage": "ebok-pcforalla"
+    },
+    {
+     "key": "digitaltrends",
+     "url": "https://www.digitaltrends.com/phones/best-websites-and-apps-to-download-free-books/",
+     "passage": null
+    }
+   ],
+   "checks": [
+    {
+     "key": "pcforalla",
+     "quote": "Kolla först med Stockholms stadsbibliotek eller ditt hemkommuns bibliotek, eftersom svenska bibliotek ofta använder egna e-lånetjänster snarare än Libby.",
+     "verdict": "nej",
+     "note": "Den nämner varken Stockholm eller Libby."
+    },
+    {
+     "key": "pcforalla",
+     "quote": "Den gemensamma söktjänsten Libris hjälper dig att hitta ditt bibliotek och se vilka digitala lån som erbjuds.",
+     "verdict": "ja",
+     "note": "Källan säger att man kan leta upp sitt bibliotek via Libris och se vilka möjligheter som finns."
+    },
+    {
+     "key": "digitaltrends",
+     "quote": "Project Gutenberg – över 75 000 titlar utan upphovsrätt",
+     "verdict": "delvis",
+     "note": "Den svenska datortidningen säger ”75 000 gratisböcker”, svaret säger ”över 75 000”. Den amerikanska källan är inte kontrollerad."
+    }
+   ],
+   "notes": [
+    "Nio av tio källor var engelska eller amerikanska topplistor och appbutikssidor, för en fråga på svenska. Därför landar svaret på Libby.",
+    "Biblio, som många svenska folkbibliotek använder, nämns inte i svaret."
+   ]
+  },
+  {
+   "id": "ebok-b",
+   "question": "Vilken är den bästa appen för att låna e-böcker gratis?",
+   "label": "Tjänst B",
+   "recorded": "2026-11-16 20:06",
+   "searchQueries": [],
+   "searchNote": "Tjänsten visade inga sökfrågor.",
+   "shownHits": [],
+   "shownHitsNote": "",
+   "answer": "Om du vill låna e-böcker gratis på svenska skulle jag i första hand rekommendera Biblio. Det är en app för folkbibliotekens digitala utlåning och kräver normalt bara ett bibliotekskort.\n\nDet finns dock några alternativ som är värda att känna till, beroende på om du vill läsa svenska böcker, engelska böcker eller litteratur utan lånebegränsningar.\n\nDe bästa alternativen\n\n1. Biblio\nBästa valet i Sverige\n- Gratis e-böcker och ljudböcker.\n- Stort utbud av svensk litteratur.\n- Offline-läsning.\n- Kräver bibliotekskort hos ett anslutet bibliotek.\n- Över 83 000 svenska titlar enligt Biblio. [Biblio +1]\nBiblios webbplats\n\n2. Libby\n- Gratis e-böcker, ljudböcker och tidskrifter.\n- Särskilt intressant för engelskspråkig litteratur.\n- Bra läsfunktioner och offline-läge.\n- Kräver att ditt bibliotek är anslutet till Libby.\nLibbys webbplats · [help.libbyapp.com +1]\n\n3. Världens bibliotek\n- Helt gratis digitala böcker.\n- Litteratur på flera språk, bland annat arabiska, persiska, somaliska och ukrainska.\n- Ingen vanlig biblioteksutlåning med begränsat antal lån.\nVärldens bibliotek · [Stockholms stadsbibliotek]\n\n4. Litteraturbanken\n- Gratis svensk litteratur.\n- Framför allt klassiker och äldre litteratur.\n- Många böcker går att läsa direkt i webbläsaren.\nLitteraturbanken\n\nMin rekommendation\nBörja med Biblio. Det är det mest relevanta alternativet om du vill läsa moderna svenska böcker utan att betala abonnemang.\n\nEn viktig begränsning är att biblioteken själva bestämmer hur många digitala lån du får göra. Det kan därför skilja sig ganska mycket mellan kommunerna.\n\nEn fråga: Är du främst ute efter svenska böcker eller vill du även kunna läsa engelskspråkiga böcker? Det påverkar vilken tjänst som är bäst.",
+   "answerKind": "ordagrant",
+   "answerNote": "",
+   "sources": [
+    {
+     "key": "Biblio",
+     "url": "https://info.biblio.app/sv/",
+     "passage": "ebok-biblio"
+    },
+    {
+     "key": "help.libbyapp.com",
+     "url": null,
+     "passage": null
+    },
+    {
+     "key": "Stockholms stadsbibliotek",
+     "url": null,
+     "passage": null
+    }
+   ],
+   "checks": [
+    {
+     "key": "Biblio",
+     "quote": "Över 83 000 svenska titlar enligt Biblio.",
+     "verdict": "ja",
+     "note": "Källan säger ”+83,000 Svenska titlar”. Men den är företagets egen säljsida riktad till bibliotek, och den kallar sig själv ”Den bästa appen för e-böcker och ljudböcker på bibliotek”. Hänvisningen stämmer, men avsändaren är den som säljer produkten."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "elspark-a",
+   "question": "Vilka regler gäller för elsparkcyklar i Sverige?",
+   "label": "Tjänst A",
+   "recorded": "2026-11-16 20:11",
+   "searchQueries": [
+    "Vilka regler gäller för elsparkcyklar i Sverige?"
+   ],
+   "searchNote": "Tjänsten visade en enda sökfråga, ordagrant samma som frågan.",
+   "shownHits": [],
+   "shownHitsNote": "",
+   "answer": "En elsparkcykel får köras i allmän trafik i Sverige om den räknas som en cykel: max 20 km/tim och högst 250 watt kontinuerlig märkeffekt. Då gäller i stort sett samma regler som för vanlig cykel. [transportstyrelsen]\n\nFordonets krav\n- Maxhastighet: högst 20 km/tim.\n- Motoreffekt: högst 250 watt kontinuerlig märkeffekt.\n- Funkerande bromsar och ringklocka eller motsvarande ljudsignal.\n- Fram- och baklyse samt reflexer vid körning i mörker. [transportstyrelsen]\n\nVar du får köra\n- Kör i första hand på cykelbana; om cykelbana saknas kan du köra på väg, normalt på vägrenen. [ntf]\n- Det är förbjudet att köra på trottoar eller gångbana. [aklagare]\n- På gågata och i gångfartsområde ska du gå eller köra i gångfart, ungefär 5–7 km/tim. [ntf]\n- Du ska anpassa hastigheten och köra omdömesgillt; påverkan av alkohol eller droger, eller att vara så trött/sjuk att du inte kan köra säkert, är inte tillåtet. [falun]\n\nFörare och passagerare\n- Det finns ingen lagstadgad åldersgräns för en elsparkcykel som klassas som cykel, men barn under 15 år måste använda hjälm. Transportstyrelsen rekommenderar hjälm för alla. [transportstyrelsen +1]\n- Elsparkcykeln är ett enpersonsfordon: du får inte skjutsa någon. [transportstyrelsen]\n\nOm fordonet är för kraftigt\nOm elsparkcykeln är byggd för över 20 km/tim eller har mer än 250 watt räknas den normalt inte som cykel. Den får då i regel bara användas på inhägnat område; i allmän trafik kan den i stället klassas som moped eller motorcykel, med krav som körkort, hjälm och försäkring. [aklagare +1]\n\nFörsäkring och parkering\n- En elsparkcykel som är konstruerad för över 14 km/tim och väger mer än 25 kg ska ha trafikförsäkring; ägaren ansvarar normalt för den. [aklagare]\n- Parkera i cykelställ eller på särskild uppställningsplats. Det är inte tillåtet att parkera på gång- eller cykelbana, om det inte finns en sådan plats. [aklagare +1]\n\nKort sagt: en laglig elsparkcykel i trafiken ska vara max 20 km/tim, max 250 W, ha klocka och bromsar, köras som en cykel och aldrig skjutsa någon. [transportstyrelsen]",
+   "answerKind": "ordagrant",
+   "answerNote": "",
+   "sources": [
+    {
+     "key": "transportstyrelsen",
+     "url": "https://www.transportstyrelsen.se/sv/vagtrafik/fordon/fordonsregler/regler-for-olika-fordonsslag/elsparkcykel/",
+     "passage": "elspark-ts"
+    },
+    {
+     "key": "ntf",
+     "url": "https://ntf.se/konsumentupplysning/elsparkcykel/",
+     "passage": null
+    },
+    {
+     "key": "aklagare",
+     "url": "https://www.aklagare.se/for-media/aktuellt-pa-aklagarmyndigheten/2026/april/regler-for-elsparkcyklar/",
+     "passage": "elspark-aklagare"
+    },
+    {
+     "key": "falun",
+     "url": "https://www.falun.se/trafik-gata--park/cykel/elsparkcyklar.html",
+     "passage": null
+    }
+   ],
+   "checks": [
+    {
+     "key": "transportstyrelsen",
+     "quote": "En elsparkcykel får köras i allmän trafik i Sverige om den räknas som en cykel: max 20 km/tim och högst 250 watt kontinuerlig märkeffekt.",
+     "verdict": "ja",
+     "note": ""
+    },
+    {
+     "key": "transportstyrelsen",
+     "quote": "Det finns ingen lagstadgad åldersgräns för en elsparkcykel som klassas som cykel, men barn under 15 år måste använda hjälm.",
+     "verdict": "delvis",
+     "note": "Hjälmkravet under 15 år och rekommendationen för alla står i källan. Att det inte finns någon åldersgräns står inte där. Det stämmer i sak (regeringens pressmeddelande 2026-08-25 säger det), men den källan finns inte i listan."
+    },
+    {
+     "key": "ntf",
+     "quote": "Kör i första hand på cykelbana; om cykelbana saknas kan du köra på väg, normalt på vägrenen.",
+     "verdict": "ja",
+     "note": "Källan säger också att den som är över 15 år får köra på körbanan trots cykelbana där gränsen är högst 50 km/tim. Svaret tar inte med det."
+    },
+    {
+     "key": "aklagare",
+     "quote": "Det är förbjudet att köra på trottoar eller gångbana.",
+     "verdict": "ja",
+     "note": ""
+    },
+    {
+     "key": "aklagare",
+     "quote": "En elsparkcykel som är konstruerad för över 14 km/tim och väger mer än 25 kg ska ha trafikförsäkring; ägaren ansvarar normalt för den.",
+     "verdict": "ja",
+     "note": ""
+    },
+    {
+     "key": "falun",
+     "quote": "Du ska anpassa hastigheten och köra omdömesgillt",
+     "verdict": "okontrollerad",
+     "note": ""
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "elspark-b",
+   "question": "Vilka regler gäller för elsparkcyklar i Sverige?",
+   "label": "Tjänst B",
+   "recorded": "2026-11-16 20:12",
+   "searchQueries": [],
+   "searchNote": "Tjänsten visade inga sökfrågor.",
+   "shownHits": [],
+   "shownHitsNote": "",
+   "answer": "1. 20 km/h och 250 W, annars moped eller mc [Transportstyrelsen +1]\n2. Cykelbana i första hand, inte trottoar, gångfart i gångfartsområde, inte motorväg [Transportstyrelsen +1]\n3. Hjälm under 15 år, \"ingen generell lagstadgad minimiålder\" (ingen hänvisning)\n4. Bromsar, ringklocka, belysning och reflexer [Transportstyrelsen +1]\n5. Inte skjutsa [Transportstyrelsen +1]\n6. Parkering [Transportstyrelsen +1]\n7. Trafikförsäkring vid >14 km/h OCH >25 kg [Åklagarmyndigheten +1]\n8. Olovlig körning och vårdnadshavares ansvar [Polisen +2]\n9. Regeringens uppdrag 2026-08-25 till Transportstyrelsen, redovisas senast 13 januari 2028 [Regeringskansliet]",
+   "answerKind": "sammanfattning",
+   "answerNote": "Svaret var långt, nio avsnitt och en tabell. Här visas bara huvudpunkterna, sammanfattade när det spelades in, med hänvisningarna som de stod.",
+   "sources": [
+    {
+     "key": "Transportstyrelsen",
+     "url": "https://www.transportstyrelsen.se/sv/vagtrafik/fordon/fordonsregler/regler-for-olika-fordonsslag/elsparkcykel/",
+     "passage": "elspark-ts"
+    },
+    {
+     "key": "Åklagarmyndigheten",
+     "url": "https://www.aklagare.se/for-media/aktuellt-pa-aklagarmyndigheten/2026/april/regler-for-elsparkcyklar/",
+     "passage": "elspark-aklagare"
+    },
+    {
+     "key": "Polisen",
+     "url": "https://polisen.se/aktuellt/nyheter/mitt/2026/augusti/da-kan-du-som-vardnadshavare-bli-misstankt-for-brott--om-ditt-barn-aker-elsparkcykel/",
+     "passage": null
+    },
+    {
+     "key": "Regeringskansliet",
+     "url": "https://www.regeringen.se/pressmeddelanden/2026/08/regeringen-vill-oka-trafiksakerheten-vid-anvandning-av-elsparkcyklar/",
+     "passage": "elspark-regeringen"
+    }
+   ],
+   "checks": [
+    {
+     "key": "Transportstyrelsen",
+     "quote": "20 km/h och 250 W, annars moped eller mc",
+     "verdict": "ja",
+     "note": "Det gör också punkterna om bromsar och belysning, skjuts, parkering och hjälm."
+    },
+    {
+     "key": "Åklagarmyndigheten",
+     "quote": "Trafikförsäkring vid >14 km/h OCH >25 kg",
+     "verdict": "ja",
+     "note": ""
+    },
+    {
+     "key": "Regeringskansliet",
+     "quote": "Regeringens uppdrag 2026-08-25 till Transportstyrelsen, redovisas senast 13 januari 2028",
+     "verdict": "ja",
+     "note": "Datum, uppdrag och 13 januari 2028 står i källan. Pressmeddelandet säger också att Sverige är det enda nordiska landet utan ålders- och alkoholgräns. Det stöder punkt 3, men svaret hänvisar inte dit vid punkt 3."
+    },
+    {
+     "key": "Polisen",
+     "quote": "Olovlig körning och vårdnadshavares ansvar",
+     "verdict": "okontrollerad",
+     "note": ""
+    }
+   ],
+   "notes": [
+    "Hänvisningarna stämmer i allt som kontrollerades."
+   ]
+  },
+  {
+   "id": "buss-a",
+   "question": "Vad kostar ett månadskort på bussen i Kalmar län nu?",
+   "label": "Tjänst A",
+   "recorded": "2026-11-16 20:14",
+   "searchQueries": [
+    "Vad kostar ett månadskort på bussen i Kalmar län nu?"
+   ],
+   "searchNote": "Tjänsten visade en enda sökfråga, ordagrant samma som frågan. Inget årtal lades till för ordet ”nu”.",
+   "shownHits": [
+    "Kalmar länstrafiks priser 2027"
+   ],
+   "shownHitsNote": "Den andra träffen som visades gällde nästa års priser.",
+   "answer": "Ett 30-dagarskort (månadskort) för hela Kalmar län kostar just nu 868 kr för vuxen, eftersom priset är halverat 1 juli–31 december 2026. [regionkalmar]\n\nPriser för hela länet\n| Korttyp | Pris 30 dagar |\n| Vuxen | 868 kr | [regionkalmar]\n| Student | 651 kr | [regionkalmar]\n| Ungdom 7–19 år | 521 kr | [regionkalmar]\n| Senior/pensionär | 153 kr | [regionkalmar]\n\nOm du bara reser i Kalmar kommun\nI Kalmar kommun är 30-dagarskortet billigare: 529 kr för vuxen, 397 kr för student och 317 kr för ungdom. [utveckling.regionkalmar]\n\nPriset beror alltså på hur många zoner du reser mellan; för exempelvis 1 zon är vuxenpriset 356 kr under den nuvarande halveringsperioden. [regionkalmar]",
+   "answerKind": "ordagrant",
+   "answerNote": "",
+   "sources": [
+    {
+     "key": "regionkalmar",
+     "url": "https://regionkalmar.se/nyhetslista/kalmar-lanstrafik-sager-ja-till-halverade-manadsbiljetter/",
+     "passage": "buss-halvering"
+    },
+    {
+     "key": "utveckling.regionkalmar",
+     "url": null,
+     "passage": null
+    }
+   ],
+   "checks": [
+    {
+     "key": "regionkalmar",
+     "quote": "Ett 30-dagarskort (månadskort) för hela Kalmar län kostar just nu 868 kr för vuxen, eftersom priset är halverat 1 juli–31 december 2026.",
+     "verdict": "delvis",
+     "note": "868 kr står i källan. Men källan är från juni. Den säger att ett slutdatum för försäljningen skulle beslutas under hösten, och att staten betalar för biljetter som börjar användas senast 1 december. Svaret tar inte med det. Kalmar länstrafiks egen prissida visade 2026-11-16 bara ordinarie priser (1 736 kr för vuxen i hela länet). Om halveringen fortfarande gäller är inte kontrollerat."
+    },
+    {
+     "key": "regionkalmar",
+     "quote": "| Student | 651 kr |",
+     "verdict": "ja",
+     "note": ""
+    },
+    {
+     "key": "regionkalmar",
+     "quote": "| Senior/pensionär | 153 kr |",
+     "verdict": "delvis",
+     "note": "153 kr står i källan, men som pris för en egen biljettyp, Seniorbiljett, inte som en 30-dagarsbiljett för pensionärer."
+    },
+    {
+     "key": "utveckling.regionkalmar",
+     "quote": "I Kalmar kommun är 30-dagarskortet billigare: 529 kr för vuxen, 397 kr för student och 317 kr för ungdom.",
+     "verdict": "okontrollerad",
+     "note": "Den länkade prislistan (pdf) är inte öppnad. Priserna stämmer med de ordinarie priserna på Kalmar länstrafiks webbplats."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "buss-b",
+   "question": "Vad kostar ett månadskort på bussen i Kalmar län nu?",
+   "label": "Tjänst B",
+   "recorded": "2026-11-16 20:16",
+   "searchQueries": [],
+   "searchNote": "Tjänsten visade inga sökfrågor.",
+   "shownHits": [],
+   "shownHitsNote": "",
+   "answer": "Ett månadskort hos Kalmar länstrafik kostar just nu mellan 264,50 och 868 kronor för vuxna, beroende på hur många zoner du behöver resa inom.\n\nTillfälligt halva priset: Priserna gäller under den tillfälliga prissänkningen som införts 1 juli 2026.\n\n30-dagarsbiljett för vuxen:\n| Resområde | Pris |\n| Kalmar kommun | 264,50 kr |\n| 1 zon | 356 kr |\n| 2 zoner | 504 kr |\n| 3 zoner | 640,50 kr |\n| 4 zoner | 761,50 kr |\n| Hela länet (5 zoner) | 868 kr |\n\nPrissänkningen gäller biljetter som köps under perioden 1 juli–1 december 2026 och aktiveras senast 2 december 2026. [Kalmar länstrafik +1]\n\nKälla: Kalmar länstrafiks officiella prislista. [1]\n\nOm du exempelvis ska pendla mellan Västervik och Kalmar behöver du kontrollera vilka zoner resan omfattar. Jag kan hjälpa dig att hitta rätt biljettpris för just den sträckan.",
+   "answerKind": "ordagrant",
+   "answerNote": "",
+   "sources": [
+    {
+     "key": "1",
+     "url": "https://www.klt.se/biljetter-och-priser/priser-och-biljetter/30-dagarsbiljett/",
+     "passage": "buss-ordinarie"
+    },
+    {
+     "key": "Kalmar länstrafik",
+     "url": null,
+     "passage": null
+    }
+   ],
+   "checks": [
+    {
+     "key": "1",
+     "quote": "| Kalmar kommun | 264,50 kr |",
+     "verdict": "nej",
+     "note": "Den länkade prissidan visar bara ordinarie priser (Kalmar kommun 529 kr, hela länet 1 736 kr) och nämner ingen halvering. 264,50 kr är hälften av 529 kr. Siffran fanns inte i någon av källorna som kontrollerades. Det ser ut som att priset har räknats fram i svaret."
+    },
+    {
+     "key": "1",
+     "quote": "| Hela länet (5 zoner) | 868 kr |",
+     "verdict": "nej",
+     "note": "Zonpriserna 356–868 kr stämmer med regionens pressmeddelande om halveringen, men det är inte den källan som länkas."
+    },
+    {
+     "key": "Kalmar länstrafik",
+     "quote": "Prissänkningen gäller biljetter som köps under perioden 1 juli–1 december 2026 och aktiveras senast 2 december 2026.",
+     "verdict": "okontrollerad",
+     "note": "Det kan finnas på en kampanjsida som inte kom med i länkarna."
+    }
+   ],
+   "notes": [
+    "Sista stycket, om att pendla mellan Västervik och Kalmar, kommer inte från frågan. Det kommer från uppgifter som var sparade i kontot som körde frågan."
+   ]
+  }
+ ]
+}

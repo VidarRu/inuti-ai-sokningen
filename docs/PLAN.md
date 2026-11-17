@@ -94,4 +94,5 @@ Uppdatera `PROGRESS.md` och committa efter varje steg.
   3. *Vilka regler gäller för elsparkcyklar i Sverige?* Steg 6 och 7: många påståenden och hänvisningar, och reglerna har ändrats flera gånger.
   4. (Reserv) *Vad kostar ett månadskort på bussen i Kalmar län nu?* Steg 2: ordet "nu" visar om tjänsten lägger till ett årtal i sökfrågorna.
   Spikens korpus har platshållartexter för alla fyra. De byts mot riktiga, daterade utdrag ur inspelningarna.
-- [ ] Hur spelas steg 2, 6 och 7 in? Byggmiljön når inte AI-söktjänsterna. Vidar kör frågorna själv och sparar svaren, eller så får en miljö tillgång till en tjänst med öppet API.
+- [x] Hur spelas steg 2, 6 och 7 in? Gjort 2026-11-16 i Vidars webbläsare, två tjänster per fråga (Tjänst A och B på sidan). Se `docs/INSPELNING.md`.
+- [ ] Lärandemål 2 (omformuleringen) syntes inte i inspelningarna: en tjänst visade frågan ordagrant som enda sökfråga, den andra visade inga. Se `PROGRESS.md`.

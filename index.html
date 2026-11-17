@@ -51,10 +51,11 @@
           <p class="kicker">AI-Folkbildaren visar</p>
           <h1 id="h0">Inuti AI-sök&shy;ningen</h1>
           <p class="lead">[Platshållare] Så här ser det ut: du skriver en fråga, och ett svar kommer, säkert formulerat och med små siffror som pekar på källor. Vi följer frågan in och ser stegen som bilden döljer.</p>
-          <div class="mock" aria-label="En påhittad bild av en AI-söktjänst">
+          <div class="mock" aria-label="En förenklad sökruta med början av ett inspelat svar">
             <p class="mock-q"><span class="mock-icon" aria-hidden="true">⌕</span><span id="mock-question">Vilka öppettider har Västerviks stadsbibliotek i jul?</span></p>
-            <p class="mock-a" id="mock-answer">[Platshållare för ett inspelat svar] Västerviks stadsbibliotek har öppet 27–30 december 10–16<sup>1</sup>. Julafton och nyårsafton är biblioteket stängt<sup>2</sup>. Med Meröppet kommer du in alla dagar 7–22<sup>3</sup>.</p>
-            <p class="mock-src"><span>1 bibliotek.vastervik.se</span><span>2 oppettider.nu</span><span>3 bibliotek.vastervik.se</span></p>
+            <p class="mock-a" id="mock-answer">Inspelat svar saknas.</p>
+            <p class="mock-src" id="mock-src"></p>
+            <p class="mock-meta" id="mock-meta"></p>
           </div>
           <p class="scrollhint" aria-hidden="true"><span></span>Scrolla för att följa frågan in</p>
           <p class="sr-only">Bildbeskrivning: en sökruta med en fråga och ett färdigt svar med fotnötter, framför ett lugnt fält av blå ljuspunkter. När du scrollar löses rutan upp och punkterna drar isär.</p>
@@ -110,6 +111,7 @@
           </div>
           <div class="dock">
             <p class="readout" id="split-readout">Inspelat exempel</p>
+            <div class="chips svc" role="group" aria-label="Välj inspelad körning" hidden></div>
             <p class="hint wide" id="split-note">Sökfrågorna är inspelade från en verklig körning, med datum. De räknas inte fram här.</p>
             <details class="more figures">
               <summary>Visa som lista</summary>
@@ -211,7 +213,7 @@
     <section class="scene" id="steg-6" style="--len:4" data-in="1.2" aria-labelledby="h6">
       <div class="hud">
         <div class="stack">
-          <p id="answer" class="out answer" aria-live="polite"></p>
+          <div id="answer" class="out answer" tabindex="0" role="region" aria-label="Det inspelade svaret"></div>
           <div class="sub">
             <h2 id="h6"><span>6</span> Svaret</h2>
             <p class="line">[Platshållare] Nu skrivs svaret, ord för ord. Varje ord väljs efter sannolikhet, utifrån utdragen och din fråga.</p>
@@ -220,6 +222,7 @@
           </div>
           <div class="dock">
             <p class="readout" id="answer-readout"></p>
+            <div class="chips svc" role="group" aria-label="Välj inspelad körning" hidden></div>
             <button id="answer-again" type="button">Skriv igen</button>
             <details class="more">
               <summary>Så här är det egentligen</summary>
@@ -237,7 +240,7 @@
     <section class="scene" id="steg-7" style="--len:4.4" data-in="1.3" aria-labelledby="h7">
       <div class="hud">
         <div class="stack">
-          <div class="out check" id="check" hidden></div>
+          <div class="out check" id="check" tabindex="0" role="region" aria-label="Kontrollen av hänvisningen" aria-live="polite" hidden></div>
           <div class="sub">
             <h2 id="h7"><span>7</span> Hänvisningen</h2>
             <p class="line">[Platshållare] Varje siffra i svaret är en tråd till en sida i webben. Dra i en tråd.</p>
@@ -245,6 +248,7 @@
             <p class="line">[Platshållare] Det är därför hänvisningen ska kontrolleras, inte bara finnas.</p>
           </div>
           <div class="dock">
+            <div class="chips svc" role="group" aria-label="Välj inspelad körning" hidden></div>
             <div class="chips" id="threads" role="group" aria-label="Dra i en källtråd"></div>
             <details class="more">
               <summary>Så här är det egentligen</summary>
@@ -284,7 +288,7 @@
             </div>
           </details>
           <footer>
-            <p>Rankningen i steg 3 och 4 räknas med modellen <a href="https://huggingface.co/Xenova/paraphrase-multilingual-MiniLM-L12-v2">paraphrase-multilingual-MiniLM-L12-v2</a>. De inspelade stegen är märkta med datum. Texterna är CC BY 4.0 och koden MIT. Sidan är gjord av AI-Folkbildaren.</p>
+            <p>Rankningen i steg 3 och 4 räknas med modellen <a href="https://huggingface.co/Xenova/paraphrase-multilingual-MiniLM-L12-v2">paraphrase-multilingual-MiniLM-L12-v2</a>. De inspelade stegen är märkta med datum och spelades in i två AI-söktjänster, här kallade Tjänst A och Tjänst B. Texterna är CC BY 4.0 och koden MIT, utom utdragen och citaten ur källorna, som inte omfattas av CC BY. Sidan är gjord av AI-Folkbildaren.</p>
           </footer>
         </div>
         <p class="sr-only">Bildbeskrivning: kameran har backat ut. Webben syns på håll som en galax, och din frågas orange punkt lyser bland sidorna.</p>

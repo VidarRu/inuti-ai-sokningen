@@ -320,15 +320,23 @@ body.travel .mock { opacity: 0; transform: scale(1.04); }
 @media (prefers-reduced-motion: reduce) { .excerpt { transition: none; transform: none; } }
 
 /* ---------- Steg 6: svaret ---------- */
-.answer { font: 500 clamp(1.15rem, 2vw, 1.55rem)/1.7 var(--serif); margin: 0 0 0.6rem; max-width: 44rem; text-align: center; text-shadow: 0 1px 3px #000, 0 0 24px rgba(2, 3, 8, 0.95); min-height: 3em; }
-.answer .w { animation: fadein 0.25s backwards; }
-.answer .fn { color: var(--accent); font-weight: 700; font-size: 0.7em; vertical-align: super; margin-left: 0.05em; }
-.answer .meta { display: block; font: 500 0.75rem var(--mono); color: var(--ink-dim); margin-top: 0.5rem; text-shadow: none; }
-@keyframes fadein { from { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .answer .w { animation: none; } }
+.answer { font: 500 clamp(0.98rem, 1.35vw, 1.12rem)/1.55 var(--serif); margin: 0 auto 0.6rem; width: min(42rem, 100%); max-height: min(52vh, 34rem); overflow-y: auto; text-align: left; background: rgba(9, 12, 26, 0.84); border: 1px solid var(--line); border-radius: 1rem; padding: 0.8rem 1.1rem; min-height: 3em; overscroll-behavior: contain; }
+.answer:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.answer p { margin: 0 0 0.6rem; }
+.answer ul { margin: 0 0 0.6rem; padding-left: 1.2rem; }
+.answer li.num { list-style: none; margin-left: -1.2rem; }
+.answer table { border-collapse: collapse; margin: 0 0 0.7rem; font-size: 0.92em; }
+.answer th, .answer td { border-top: 0; border-bottom: 1px solid rgba(180, 195, 255, 0.2); padding: 0.15rem 0.8rem 0.15rem 0; text-align: left; vertical-align: top; font-family: inherit; }
+.answer th { font-weight: 700; color: #fff; }
+.answer .w { opacity: 0; transition: opacity 0.25s; }
+.answer .w.on { opacity: 1; }
+.answer .fn { color: var(--accent); font: 600 0.68em var(--mono); border: 1px solid rgba(255, 178, 74, 0.5); border-radius: 0.5rem; padding: 0 0.3rem; margin-left: 0.15em; white-space: nowrap; vertical-align: 0.15em; }
+.answer .meta { font: 500 0.75rem var(--mono); color: var(--ink-dim); margin: 0.7rem 0 0; }
+.answer .meta.note { margin-top: 0.3rem; font-family: var(--sans, inherit); font-size: 0.8rem; color: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .answer .w { transition: none; } }
 
 /* ---------- Steg 7: kontrollen ---------- */
-.check { width: min(40rem, 100%); margin: 0 auto; background: rgba(9, 12, 26, 0.88); border: 1px solid var(--line); border-radius: 1rem; padding: 0.8rem 1rem; display: grid; gap: 0.5rem; font-size: 0.92rem; }
+.check { width: min(40rem, 100%); margin: 0 auto; max-height: min(52vh, 32rem); overflow-y: auto; overscroll-behavior: contain; background: rgba(9, 12, 26, 0.88); border: 1px solid var(--line); border-radius: 1rem; padding: 0.8rem 1rem; display: grid; gap: 0.5rem; font-size: 0.92rem; }
 .check .claim { color: #fff; font-family: var(--serif); font-size: 1.05rem; }
 .check .claim .fn { color: var(--accent); font-weight: 700; font-size: 0.7em; vertical-align: super; }
 .check .source { border-left: 3px solid #4fd0e0; padding-left: 0.7rem; color: var(--ink-soft); }
@@ -337,3 +345,18 @@ body.travel .mock { opacity: 0; transform: scale(1.04); }
 .check .verdict.ja { color: #5fe3a0; } .check .verdict.nej { color: #ff9d9d; } .check .verdict.delvis, .check .verdict.okant { color: var(--accent); }
 .check mark { background: rgba(95, 227, 160, 0.25); color: inherit; }
 .chips button.thread::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent); display: inline-block; margin-right: 0.4rem; box-shadow: 0 0 8px var(--accent); }
+
+/* ---------- Inspelningarna ---------- */
+.label.split.hidden-q { color: var(--ink-dim); font-style: italic; border-style: dashed; }
+.plainlist .hitname { font-size: 0.85rem; color: var(--ink-soft); }
+.mock-meta { margin: 0.4rem 0 0; font: 500 0.72rem var(--mono); color: var(--ink-dim); }
+.mock-a .cut { color: var(--ink-dim); }
+.lure-note { display: block; margin-top: 0.35rem; color: var(--ink-soft); font-size: 0.85rem; }
+.svc { margin: 0.2rem 0 0.6rem; }
+.check .claims { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.check .claims p { margin: 0; }
+.check .source p { margin: 0.1rem 0 0; white-space: pre-line; }
+.check .verdict.okontrollerad { color: var(--ink-dim); }
+.check:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.plainlist li.tag, .plainlist li.hitname { list-style: none; margin-left: -1.3rem; }
+.check .verdict .tag { display: block; margin: 0.15rem 0 0; font: 400 0.85rem/1.45 var(--sans); color: var(--ink-soft); }
